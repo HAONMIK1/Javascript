@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun(choice){//fun 함수 정의
+		/*var choice=true
+		var choice=false*/
+		
+		if(choice==true){
+			alert("자바스크립트 굉장히 재미있습니다.");
+		}else{
+			alert("자바스크립트 조금 재미있습니다.");
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>자바스크립트 재미있나요?</h1>
+	<form>
+		<input type="button" value="예" onclick="fun(true)">
+		<input type="button" value="아니오"onclick="fun(false)">
+	</form>
+
+</body>
+</html>
+<!--
+public void setName(String name){
+	this.name=name;
+}
+
+setName("홍길동");
+
+alert: 창에 확인뿐이다(입력,취소 없음)
+-->

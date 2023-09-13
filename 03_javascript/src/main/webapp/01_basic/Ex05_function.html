@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#result{
+		width: 300px;
+		height: 100px;
+		background-color: yellow;
+	}
+</style>
+<script type="text/javascript">
+	function func(a,b){
+		alert('func:'+a+b);
+		myarea = document.getElementById("result");
+		if(a==null){
+			myarea.innerHTML = "a변수는 초기화 되지 않았고, <br> b변수의 값은 "+b+"입니다.";
+		}
+		else if(typeof b =="undefined"){
+			myarea.innerHTML = "a변수의 값은 "+a+"이고, <br> b변수는 초기화 되지 않았습니다.";
+		}
+		else{
+		myarea.innerHTML = "a+b의 값은 " + (a+b)+"입니다.";
+		}
+	}	
+</script>	
+</head>
+<body>
+	<h3>a와 b의 값을 선택하세요</h3>
+	<form>
+		<input type="button" value="a=3,b=10" onClick="func(3,10)">
+		<input type="button" value="b=8" onClick="func(null,8)">
+		<input type="button" value="a=11" onClick="func(11,null)">
+	</form>
+	<br><br>
+	<div id="result"></div>
+</body>
+</html>

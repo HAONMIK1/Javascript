@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	span{
+		color: blue;
+		font-weight: bold;
+		font-size: 20px;
+	}
+</style>
+<script type="text/javascript">
+	var yourName = prompt("이름을 넣어주세요","김앙금"); /*프롬프트함수: 확인과 취소를 가진다/ 초기값 설정하고 싶을때 뒤에다 이름 설정(김앙금)*/
+	
+	if(yourName==""){
+		document.write("이름이 누락됐습니다.");
+	}else if(yourName!=null){
+		document.write('<span>'+yourName+"</span>님 환영합니다. <br>");
+	}else{
+		document.write("취소 클릭했습니다.");
+	}
+	
+</script>
+</head>
+<body>
+	이곳은 body 영역
+</body>
+</html>
+<!--
+	대화상자 prompt 함수 : 확인과 취소를 가지는 함수, 프롬프트 창이 뜬다, 취소를 누르면 변수에 null이 담긴다.-->

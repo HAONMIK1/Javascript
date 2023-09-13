@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type ="text/javascript">
+	var favorite = prompt("어느 계절을 좋아하세요?(1:봄, 2:여름, 3:가을, 4:겨울)");
+	alert(typeof(favorite));//3="3"
+	
+	switch(Number(favorite)){
+		case 1 : 
+			document.write("<h2>봄을 좋아하시는 군요</h2>");
+			document.write("<img src =./../images/spring.png></img>");/* ./는 현재위치를 뜻함(01_basic)*/
+			break;
+			
+		case 2: 
+			document.write("<h2>여름을 좋아하시는 군요</h2>");
+			document.write("<img src = ./../images/summer.png></img>");
+			break;
+			
+		case 3: 
+			document.write("<h2>가을을 좋아하시는 군요</h2>");
+			document.write("<img src = ./../images/fall.png></img>");
+			break;
+			
+		case 4: 
+			document.write("<h2>겨울을 좋아하시는 군요</h2>");
+			document.write("<img src = ./../images/winter.png></img>");
+			break;
+			
+		default :
+			document.write("1~4번호만 가능합니다.");
+			break;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#result {
+	width: 190px;
+	height: 100px;
+	background-color:silver;
+}
+</style>
+<script type="text/javascript">
+	var farr = new Array('한식', '중식', '일식', '양식');
+	var sarr = [
+						[ '김치찌개', '된장찌개', '불고기', '설렁탕', '뼈해장국' ], 
+						[ '탕수육','팔보채', '깐풍기', '볶음밥' ], 
+						[ '초밥', '덮밥', '문어구이', '스시', '우동' ], 
+						['스테이크', '캐비어', '푸아그라', '파스타', '월남쌈' ]
+		];
+	function init() {
+		//alert('init');
+
+		document.myform.first.options[0] = new Option("선택");
+		document.myform.second.options[0] = new Option("선택");
+
+		for (i = 0; i < farr.length; i++)
+			document.myform.first.options[i + 1] = new Option(farr[i]);
+
+	}
+	function firstChange() {
+		fIndex= document.myform.first.selectedIndex;
+
+		for (i = 0; i <sarr[fIndex-1].length; i++){
+			document.myform.second.options[i+1] =null;
+		} 
+		for (i = 0; i <sarr[fIndex-1].length; i++){
+			document.myform.second.options[i+1] = new Option(sarr[fIndex-1][i]);
+		}  
+		myArea.innerHTML="";
+		}
+	function secondChange() {
+		fIndex1= document.myform.first.selectedIndex;
+		fIndex2= document.myform.second.selectedIndex;
+		
+		seltext1 = document.myform.first.options[fIndex1].text
+		seltext2 = document.myform.second.options[fIndex2].text
+		
+		myArea=document.getElementById("result");
+		myArea.innerHTML="선택한메뉴는 <br>"+fIndex1+seltext1+" "+fIndex2+seltext2;
+	}
+</script>
+</head>
+<body onload="init()">
+	<form name="myform">
+		<select name='first' style="width: 80px" onChange="firstChange()"></select>
+		<select name='second' style="width: 100px" onChange="secondChange()"></select>
+		<div id="result" align="center"></div>
+	</form>
+</body>
+</html>

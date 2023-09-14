@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var clo=[['여성복','남성복','아동복'],
+	['회색바지', '검정바지', '반팔'],
+	['점퍼', '코트', '양복','셔츠'],
+	['오렌지원피스', '분홍원피스', '남자아동복']];
+
+var cloth=	[['woman1.jpg', 'woman2.jpg', 'woman3.jpg'],
+	['man1.jpg', '남성코트.jpg', 'man3.jpg','셔츠.jpg']
+	,['child1.jpg', 'child2.jpg', 'child3.jpg']];
+
+function init() {
+
+	document.myform.kind.options[0]=new Option("선택");
+	document.myform.content.options[0]=new Option("선택");
+	
+	for(i=0;i<clo[0].length;i++)
+	document.myform.kind.options[i+1]=new Option(clo[0][i]);
+
+		
+}
+function kkind() {
+	KIndex=document.myform.kind.selectedIndex;
+
+	for(i=0;i<clo[KIndex].length;i++)
+		document.myform.content.options[i+1]=new Option(clo[KIndex][i]); 
+}
+function ccloth() {
+	KIndex= document.myform.kind.selectedIndex;
+	CIndex= document.myform.content.selectedIndex;
+	
+	Kseltext = document.myform.kind.options[KIndex].text
+	Cseltext = document.myform.content.options[CIndex].text
+	
+	myArea=document.getElementById("result");
+	myArea.innerHTML="선택한메뉴는 <br>"+KIndex+Kseltext+" "+CIndex+Cseltext+
+	"<br> <img src = ./../images/"+cloth[KIndex-1][CIndex-1]+">";
+}
+
+</script>
+</head>
+<body onload="init()">
+<form name="myform">
+<select name="kind" style="width: 100px" onchange="kkind()"></select>
+<select name="content" style="width: 100px;" onchange="ccloth()"></select>
+<div id="result"></div>
+
+</form>
+</body>
+</html>

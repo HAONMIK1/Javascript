@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	position: relative;
+	top: 10px;
+	
+}
+</style>
+<script type="text/javascript">
+	var now = new Date();
+	document.write("now1" + now + "<br>");
+	document.write("now2" + now.toString() + "<br>");
+	document.write("now3" + now.toDateString() + "<br>");
+	document.write("now4" + now.toTimeString() + "<br>");
+
+	document.write("오늘은");
+	document.write(now.getUTCFullYear() + "년/");
+	document.write(now.getYear() + 1900 + "년/");
+	document.write(now.getMonth() + 1 + "월/");
+	document.write(now.getDate() + 1 + "일<br>");
+
+	document.write("현재 시간은 ");
+	//3document.write(now.getHours()+1+"시");
+
+	var hour = now.getHours();
+	if (hour >= 12) {
+		ampm = "오후";
+		hour -= 12;
+	} else {
+		ampm = "오전";
+
+	}
+	document.write(ampm + " " + now.getHours() + "시 " + now.getMinutes() + "분 "+ now.getSeconds() + "초<br>");
+	day = now.getDay();
+	
+	var yoil = new Array();
+	yoil[0] = "./../images/sun.gif"
+	yoil[1] = "./../images/mon.gif"
+	yoil[2] = "./../images/tue.gif"
+	yoil[3] = "./../images/wed.gif"
+	yoil[4] = "./../images/thu.gif"
+	yoil[5] = "./../images/fri.gif"
+	yoil[6] = "./../images/sat.gif"
+	document.write("오늘은 <img src = "+yoil[day]+"> 요일입니다");
+</script>
+</head>
+<body>
+</body>
+</html>

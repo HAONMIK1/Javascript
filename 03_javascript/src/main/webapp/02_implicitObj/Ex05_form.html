@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#result {
+	width: 100px;
+	height: 100px;
+	background-color: navy;
+}
+</style>
+<script type="text/javascript">
+function fruit() {
+	alert('fruit');
+	selIndex= document.myform.sel.selectedIndex
+	alert(selIndex);
+	
+	seltext = document.myform.sel.options[selIndex].text
+	selValue = document.myform.sel.options[selIndex].value
+	alert(selIndex+seltext+selValue)
+	
+	myArea=document.getElementById("result");
+	myArea.innerHTML="선택한값은?"+selIndex+seltext+selValue;
+}
+function init() {
+	alert('init');
+	form_len =document.forms.length;
+	alert('form_len: '+form_len);
+	
+	/* option_len = document.myform.sel.options.length;
+	alert('option_len:'+option_len); */
+	
+	document.myform.sel.options[3]= new Option("grape","4");
+	
+}
+</script>
+</head>
+<body onload="init()">
+
+	<form name="myform">
+		<select name='sel' onChange="fruit()">
+			<option value="apple">apple</option>
+			<option value="banana">banana</option>
+			<option value="orange">orange</option>
+		</select>
+		<div id="result"></div>
+	</form>
+
+	<form name="yourform">
+	
+		<div id="result"></div>
+	</form>
+
+
+
+</body>
+</html>

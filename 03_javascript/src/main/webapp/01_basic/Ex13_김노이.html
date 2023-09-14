@@ -3,14 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+table {
+	margin: auto;
+	padding: 10px;
+	border-spacing: 0; 
+}
+table tr:nth-child(1){
+background-color: yellow;
+}
+td:nth-child(1) {
+	background-color: red;
+}
+td:nth-child(3) {
+	background-color: red;
+}
+
+</style>
 <script type="text/javascript">
-	document.write("<table border='1' width='500' height='200' align='center'>")
+	document.write("<table border='1' width='500px' height='200px' align='center'>")
 	for (i = 2; i <= 9; i++) {
-			document.write("<td bgcolor='pink'align='center' >" + i + "단</td>")
+			document.write("<th align='center' >" + i + "단</th>")
 		}
 	for (m = 1; m <= 9; m++) {
 		document.write("<tr>")
 		for (j = 2; j <= 9; j++) {
+		
 			document.write("<td align='center'>" + j + "X" + m + "=" + (m * j) + "</td>")
 		}
 		document.write("</tr>")

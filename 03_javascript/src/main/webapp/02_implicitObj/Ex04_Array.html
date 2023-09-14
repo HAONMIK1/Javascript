@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	var yoil = new Array();
+	yoil[0] = "./../images/sun.gif";
+	yoil[1] = "./../images/mon.gif";
+	yoil[2] = "./../images/tue.gif";
+	yoil[3] = "./../images/wed.gif";
+	yoil[4] = "./../images/thu.gif";
+	yoil[5] = "./../images/fri.gif";
+	yoil[6] = "./../images/sat.gif";
+
+	
+
+	document.write("<table border='1'>")
+	document.write("<tr>")
+	for(i=0;i<4;i++){
+	document.write("<td>")
+	document.write("<img  src= "+yoil[i]+"> ")
+	document.write("</td>")
+	}
+	document.write("</tr>")
+	document.write("<tr>")
+	for(i=4;i<yoil.length;i++){
+	document.write("<td>")
+	document.write("<img  src="+yoil[i]+">")
+	document.write("</td>")
+	}
+	document.write("<td>")
+	document.write("없음")
+	document.write("</td>")
+	
+	document.write("</tr>")
+	document.write("</table>")
+</script>
+</head>
+<body>
+</body>
+</html>

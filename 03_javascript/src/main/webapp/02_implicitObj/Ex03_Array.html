@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [ [ 'rose', 'tulip', 'lily' ], [ '윤아', '태연', '서현','수영' ] ];
+
+	var arr1 = new Array(2);
+	arr1[0]= new Array();
+	arr1[1]= new Array();
+	arr1[0][0]='rose';
+	arr1[0][1]='tulip';
+	arr1[0][2]='lily';
+	
+	arr1[1][0]='윤아';
+	arr1[1][1]='태연';  
+	arr1[1][2]='서현';
+	arr1[1][3]='수영';
+	
+	var arr1 = new Array(2);
+	arr1[0]= new Array('rose', 'tulip', 'lily' );
+	arr1[1]= new Array( '윤아', '태연', '서현','수영' );
+	
+	document.write(arr.length+"<br>");
+	
+	document.write("<br>");
+	
+	for(i in arr)
+		document.write(i+"행의 길이"+arr[i].length +"<br>");
+	
+	document.write("<br>");
+	
+	for(i in arr){	
+		for(j in arr[i]){
+			document.write(i+"행 "+j+"열의 "+arr[i][j]+"<br>");
+		}
+			document.write("<br>");
+	}
+	
+	</script>
+</head>
+<body>
+</body>
+</html>
+<!-- 
+int[][] arr = {{,},{,}}
+int [][]arr = new int[][]; 
+-->

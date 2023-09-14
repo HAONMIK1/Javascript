@@ -13,8 +13,8 @@
 	document.write("영어: "+eng+"<br>");
 	document.write("수학: "+math+"<br><br>");
 	
-	var sum  = eval(kor)+eval(eng)+eval(math);
-	var avg = (eval(kor)+eval(eng)+eval(math))/3;
+	sum  = eval(kor)+eval(eng)+eval(math);
+	avg = (eval(kor)+eval(eng)+eval(math))/3;
 	
 	document.write("합계: "+sum+"<br>");
 	document.write("평균: "+avg+"<br><br>");
@@ -32,6 +32,25 @@
 	
 	document.write("<br>");
 	
+	switch (parseInt(avg/10)) {
+	case 9:
+		document.write("A학점");
+		break;
+	case 8:
+		document.write("b학점");
+		break;
+	case 7:
+		document.write("c학점");
+		break;
+
+	default:
+		document.write("F학점");
+		break;
+	}
+	document.write("<br>");
+	
+	
+
 	document.write("10"+2+"<br>");
 	document.write("10"-"2"+"<br>");
 	document.write("10"*2+"<br>");

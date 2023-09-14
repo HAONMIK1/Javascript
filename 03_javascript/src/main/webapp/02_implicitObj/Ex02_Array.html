@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var A = new Array('kim','lee','soon');
+	var B = new Array('park','choi','won','hong');
+	
+	var C = A.concat(B);
+	document.write("C : "+C+"<br>");
+	var Crev=C.reverse();
+	document.write("Crev : "+Crev+"<br>");
+	
+	sliceArr=	C.slice(1,3);//slice => 일부 갔고오고 싶을떄 
+	for(i in sliceArr){
+		document.write(sliceArr[i]+" ");
+	}
+	document.write("<br>");
+	
+	C.sort();//정렬할때 sort함수
+	document.write(C+"<br>");
+	console.log("C:"+C);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

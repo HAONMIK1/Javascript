@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//	now=new Date();
+	//document.write(now+'<br>');
+	
+	var time =setInterval(function() {
+		now = new Date();
+		hours = now.getHours();
+		if(hours>=12)
+			clock="오후"+(hours-12)+"시";
+		else
+			clock="오전"+housr+"시";
+		
+		minutes = now.getMinutes();
+		if(minutes<10)
+			clock+="0"+minutes+"분";
+		else
+			clock+=minutes+"분";
+	
+		seconds = now.getSeconds();
+		if(seconds<10)
+			clock+="0"+seconds+"초";
+		else
+			clock+=seconds+"초";
+		
+		var area= document.getElementById("result");
+		area.innerHTML= clock;
+		
+	}, 1000);
+	
+	setTimeout(function() {
+		clearInterval(time);
+	},10000);
+</script>
+</head>
+<body>
+	<h1>현재시간</h1>
+	<div id="result"></div>
+</body>
+</html>

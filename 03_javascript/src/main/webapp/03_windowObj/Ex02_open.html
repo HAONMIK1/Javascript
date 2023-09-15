@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function showPopup(url) {
+	window.open(url,'pop2','width =300 height=450')
+}
+function showCenter(url) {
+	winW=300;
+	winH=400;
+	winLeft=(screen.width-winW)/2;
+	winTop=(screen.height-winH)/2;
+	options = "width="+winW+", height"+winH+"left"+winLeft+"top"+winTop;
+	//document.write(screen.width+"/"+screen.height+"<br>")
+	mywin=window.open(url,'pop3',options);
+}
+function closeWindow() {
+	mywin.close();
+}
+</script>
+</head>
+<body>
+	<input type="button" value="팝업1" onclick="window.open('Ex02_popup1.html','pop1','width =300 height=450')"> <br><br>
+	<input type="button" value="팝업2" onclick="showPopup('Ex02_popup2.html')"> <br><br>
+	<input type="button" value="팝업3" onclick="showCenter('Ex02_popup3.html')"> <br><br>
+	<input type="button" value="닫기" onclick="closeWindow()"> <br><br>
+</body>
+</html>

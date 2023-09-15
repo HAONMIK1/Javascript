@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check() {
+	mlen = myform.movie.length;
+	slen = myform.sing.length;
+	flen = myform.fruit.length;
+	str="선택한 항목은";
+	flag = false;
+	for(i =0;i< mlen;i++){
+		if(myform.movie[i].checked){
+			str+=myform.movie[i].value;
+			flag = true;
+			break;
+		}
+	}
+	if(flag==false){
+		alert('movie 체크하시오')
+		return flag ;
+	}
+	flag = false;
+	for(i =0;i<slen;i++){
+		if(myform.sing[i].checked){
+			str+=myform.sing[i].value;
+			flag = true;
+			break;
+		}
+	}
+	if(flag==false){
+		
+		alert('sing 체크하시오')
+		return flag ;
+	}
+	flag = false;
+	for(i =0;i<flen;i++){
+		if(myform.fruit[i].checked){
+			str+=myform.fruit[i].value;
+			flag = true;
+		}
+	}
+	if(flag==false){
+		alert('과일을 체크하시오')
+		return flag ;
+	} 
+	alert(str);
+}
+
+</script>
+</head>
+<body>
+	<form action="result.jsp" name="myform">
+		1.가장 좋아하는 영화 한 개 만을 선택하세요<br> 
+		<input name="movie" type="radio" value="인디아나 존스">인디아나 존스
+		<input name="movie" type="radio" value="해리포터">해리포터
+		<input name="movie" type="radio" value="반지의 제왕">반지의 제왕
+		<hr>
+		2.좋아하는 노래를 선택하세요 <br> 
+		<input name="sing" type="radio" value="세월이 가면">세월이 가면 
+		<input name="sing" type="radio"value="붉은 노을">붉은 노을 
+		<input name="sing" type="radio"value="희망사항">희망사항 
+		<input name="sing" type="radio" value="신데렐라">신데렐라
+		<hr>
+		
+		3.좋아하는 과일을 선택하세요 <br>
+		<input type="checkbox" name="fruit" value="포도">포도
+		<input type="checkbox" name="fruit" value="수박">수박
+		<input type="checkbox" name="fruit" value="참외">참외
+		<input type="checkbox" name="fruit" value="사과">사과
+		<hr>
+		<input type="submit" value="확인" onclick="return check()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function sendEnd(num1,operator,num2) {
+	alter(num1,operator,num2)
+	close();
+}
+
+</script>
+</head>
+<body>
+<form action="">
+<input name="num1" type="number" size="1">
+<select id="operator" >
+	<option  value="+">더하기</option>
+	<option value="*">곱하기</option>
+	<option value="-">뺴기</option>
+	<option value="/">나누기</option>
+</select>
+<input name="num2" type="number" width="5">
+<br><br><br>
+
+<input type="button" value="닫기" onclick="sendEnd(num1,operator,num2)">
+</form>
+</body>
+</html>

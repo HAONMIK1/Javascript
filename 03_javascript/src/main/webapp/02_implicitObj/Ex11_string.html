@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+function check1() {
+	j1value=document.myform.jumin1.value;
+	j1length=document.myform.jumin1.value.length;
+	
+	if(isNaN(j1value)){//Nan=Not a Number
+		ch =j1value.charAt(j1length-1);
+		document.myform.jumin1.value = j1value.replace(ch,"");
+		
+		//  document.myform.jumin1.value = j1value.replace(j1length-1,"");
+	}
+	if(j1length==6)
+			document.myform.jumin2.focus();
+}
+function check2() {
+	j2value=document.myform.jumin2.value;
+	j2length=document.myform.jumin2.value.length;
+	j1value=document.myform.jumin1.value
+	document.myform.jumin2.value.length;
+	
+	if(j2length==7){
+		birth1= j2value.charAt(0);
+		if(birth1=='1'){
+		document.myform.birth1.value= '19'+j1value.substr(0,2);
+		}
+		else
+		document.myform.birth1.value= '20'+j1value.substr(0,2);
+			
+		document.myform.birth2.value= j1value.substring(2,4);
+		document.myform.birth3.value= j1value.substr(4,6);
+		
+	}
+	else{
+		document.myform.birth1.value= '';
+		document.myform.birth2.value='';
+		document.myform.birth3.value= '';
+	}
+}
+</script>
+</head>
+<body>
+	<form  name="myform" action="result.jsp">
+	주민등록번호
+	<input name="jumin1" type="text" size="7" maxlength="7" onkeyup="check1()">
+	<input name="jumin2" type="text" size="7" maxlength="7" onkeyup="check2()">
+	
+	<br><br>
+	생년월일
+	<input name="birth1" type="text" size="7">
+	<input name="birth2" type="text" size="7">
+	<input name="birth3" type="text" size="7">
+	
+	
+	</form>
+</body>
+</html>

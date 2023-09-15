@@ -37,8 +37,7 @@ function ccloth() {
 	Cseltext = document.myform.content.options[CIndex].text
 	
 	myArea=document.getElementById("result");
-	myArea.innerHTML="선택한메뉴는 <br>"+KIndex+Kseltext+" "+CIndex+Cseltext+
-	"<br> <img src = ./../images/"+cloth[KIndex-1][CIndex-1]+">";
+	myArea.innerHTML="선택한메뉴는<br><img src = ./../images/"+cloth[KIndex-1][CIndex-1]+">";
 }
 
 </script>
@@ -48,7 +47,7 @@ function ccloth() {
 <select name="kind" style="width: 100px" onchange="kkind()"></select>
 <select name="content" style="width: 100px;" onchange="ccloth()"></select>
 <div id="result"></div>
-
+	
 </form>
 </body>
 </html>

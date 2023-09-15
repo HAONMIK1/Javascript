@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check() {
+	id =document.myform.id.value;
+	pw =document.myform.pw.value;
+	if(id==""){
+		
+		alert('id가 누락됐습니다')
+		myform.id.focus();
+		return false;
+		
+	}
+	if(pw==""){
+		
+		alert('pw가 누락됐습니다')
+		myform.pw.focus();
+		return false;
+		
+	}
+	if(myform.pw.value.length<3 || myform.pw.value.length >6 ){
+		
+		alert('비번은 3~6자리 입력하세요')
+		myform.pw.focus();
+		return false;
+		
+	}
+	if(myform.tel.value==""){
+		alert("전화번호를 입력하세요")
+		myform.tel.focus();
+		return false;
+	}
+	if(isNaN(myform.tel.value)){//isNaN 숫자가 맞는지
+		
+		alert("전화번호는 숫자만 입력하세요")
+		myform.tel.select();//블럭잡히기
+		return false;
+		
+	}
+}
+</script>
+</head>
+<body  onload="myform.id.focus()">
+	<form action="result.jsp" name="myform">
+		아이디 <input type="text" name="id"> <br><br>
+		비밀번호 <input type="text" name="pw"> <br><br>
+		전화번호 <input type="text" name="tel"> <br><br>
+		
+		<input type="submit" value="전송" onclick="return check()">
+		<input type="reset" value="취소" onclick="return check()">
+	</form>
+</body>
+</html>

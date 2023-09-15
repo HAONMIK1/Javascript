@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function openWin(url) {
+		window.open(url,'pop1','width=400 height= 600');
+	}
+</script>
+</head>
+<body>
+	부모창 <br>
+	<form name="myform">
+		id <input type="text" name="id"><br> <br>
+		pw <input type="text" name="password"><br> <br>
+		
+		<input type="button" value="팝업창 열기" onclick="openWin('Ex03_child.html')">
+		
+	</form>
+</body>
+</html>

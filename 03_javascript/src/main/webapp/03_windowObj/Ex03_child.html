@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function winClose() {
+	window.close();
+}
+function receiver() {
+	//alert(1);
+	myform.chile_id.value = opener.document.myform.id.value;
+	window.document.myform.chile_password.value = window.opener.document.myform.password.value;
+}
+</script>
+</head>
+<body onload="receiver()">
+	자식창 <br>
+	<form name="myform">
+		id	<input type="text" name="chile_id"><br><br>
+		pw	<input type="text" name="chile_password"><br><br>
+		
+		<input type="button" value="닫기" onclick="winClose()">
+		
+	</form>
+</body>
+</html>

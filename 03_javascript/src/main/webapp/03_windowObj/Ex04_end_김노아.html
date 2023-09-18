@@ -2,28 +2,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 <script type="text/javascript">
-function sendEnd(num1,operator,num2) {
-	alter(num1,operator,num2)
+function sendEnd(){
+ num1 = myform.num1.txt;
+ num2 = myform.num2.txt
+ index = myform.oprator.selectedIndex;	
+ switch(index){
+		case 1: 
+		result =num1*num2;
+		break;
+		case 2: 
+		result =num1-num2;
+		break;
+		case 3: 
+		result =num1/num2;
+		break;
+	}
+	opener.document.myform.result.value = result;
 	close();
 }
-
 </script>
 </head>
 <body>
-<form action="">
+<form name="myform">
 <input name="num1" type="number" size="1">
-<select id="operator" >
-	<option  value="+">더하기</option>
-	<option value="*">곱하기</option>
-	<option value="-">뺴기</option>
-	<option value="/">나누기</option>
+<select name="operator">
+	<option>더하기</option>
+	<option>곱하기</option>
+	<option>뺴기</option>
+	<option>나누기</option>
 </select>
 <input name="num2" type="number" width="5">
-<br><br><br>
+<br><br>
 
-<input type="button" value="닫기" onclick="sendEnd(num1,operator,num2)">
+<input type="button" value="닫기" onclick="sendEnd()">
 </form>
 </body>
 </html>

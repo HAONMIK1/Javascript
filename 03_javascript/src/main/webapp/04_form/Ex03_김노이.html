@@ -10,15 +10,160 @@ table {
 }
 </style>
 <script type="text/javascript">
-	
+	function send() {
+		idlen=myform.id.value.length;
+		pwlen=myform.pw.value.length
+		repwlen=myform.repw.value.length;
+		nlen=myform.name.value.length;
+		tel1=myform.tel1.value.length;
+		tel2=myform.tel2.value.length;
+		addr1=myform.addr1.value.length;
+		addr2=myform.addr2.value.length;
+		email=myform.email.value.length;
+		slen = myform.sing.length;
+		glen = myform.gender.length;
+		read=myform.read.value.length;
+		
+		idval=myform.id.value;
+		pwval=myform.pw.value;
+		repwval=myform.repw.value;
+		nval=myform.name.value;
+		tel=myform.tel.value;
+		tval1=myform.tel1.value;
+		tval2=myform.tel2.value;
+		addrval1=myform.addr1.value;
+		addrval2=myform.addr2.value;
+		eval=myform.email.value;
+		sval = myform.sing.value;
+		gval = myform.gender.value;
+		rval=myform.read.value;
+		
+		if(idlen==""){//len 안쓰고 value==""로 대체가능 그래서 length을 안써도 됌
+			alert("아이디를 입력하세요.");
+			myform.id.focus();
+			return false;
+		}
+		if(pwlen==""){
+			alert("비밀번호를 입력하세요.");
+			myform.pw.focus();
+			return false;
+		}
+		if(repwlen==""){
+			alert("비밀번호를 확인하세요.");
+			myform.repw.focus();
+			return false;
+		}
+		if(pwval!=repwval){
+			alert('비밀번호가 다릅니다.')
+			myform.repw.focus();
+			return false;
+		}
+		if(nlen==""){
+			alert("이름을 입력하세요.");
+			myform.name.focus();
+			return false;
+		}	
+		if(myform.tel.value=="선택"){
+			alert("지역번호를 선택하세요");
+			myform.tel.focus();
+			return false;
+		} 
+		if(tel1==""){
+			alert("전화번호를 입력하세요.");
+			myform.tel1.focus();
+			return false;
+		}
+		
+		if(tel2==""){
+			alert("전화번호를 입력하세요.");
+			myform.tel2.focus();
+			return false;
+		}
+		
+		if(isNaN(tval1)){
+			alert("전화번호는 숫자로 입력하세요");
+			myform.tel1.focus();
+			return false;
+		}
+		if(isNaN(tval2)){
+			alert("전화번호는 숫자로 입력하세요");
+			myform.tel2.focus();
+			return false;
+		} 
+		
+		if(addr1==""){
+			alert("주소를 입력하세요.");
+			myform.addr1.focus();
+			return false;
+		}
+		
+		if(addr2==""){
+			alert("세부주소를 입력하세요.");
+			myform.addr2.focus();
+			return false;
+		}
+		
+		if(email==""){
+			alert("이메일을 입력하세요.");
+			myform.email.focus();
+			return false;
+		}
+		if(email.indexof("@")==-1){
+			alert("이메일을 형식이 아닙니다.");
+			myform.email.focus();
+			return false;
+		}
+		
+		flag = false;
+		
+		for(i=0; i < slen; i++){
+			if(myform.sing[i].checked){
+				sval = myform.sing[i].value;
+				flag = true;
+			}
+		}
+		if(flag == false){
+			alert("좋아하는 가수를 한명이상 선택하세요");
+			return false;
+		}
+		
+		 flag = false;
+		for(i=0; i < glen; i++){
+			if(myform.gender[i].checked){
+				flag = true;
+			}
+		}
+		if(flag == false){
+			alert("성별을 선택하세요");
+			return false;
+		}
+		 
+		
+		
+		
+		
+		if(rval == ""){
+			alert('내용을 입력하세요.');
+			return false
+		}
+		alert("아이디: "+idval+"\n비밀번호: /* "+pwval+"\n이름: "+nval+"\n전화번호: "+tel+"-"+tval1+'-'+tval2+
+				"\n주소: "+addrval1+" "+addrval2+"\n이메일: "+eval+"\n좋아하는 가수: "+sval+"\n성별: "
+				+gval+"\n글 내용: "+rval */);
+				}
+	function go_focus(someTarget) {
+		//alert(1);
+		if(someTarget.defaultValue==someTarget.value){
+			someTarget.value='';
+		}
+	}
 </script>
 </head>
 <body>
-	<form action="">
+	<form name="myform" action="result.jsp">
 		<table border="1">
 			<tr>
 				<td>아이디</td>
-				<td><input type="text" name="id" size="5"></td>
+				<td><input type="text" name="id" size="7" placeholder="아이디 입력" onfocus="go_focus(myform.id)"></td>
 			</tr>
 			<tr>
 				<td>비밀번호</td>
@@ -30,37 +175,39 @@ table {
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="pw" size="5"></td>
+				<td><input type="text" name="name" size="5"></td>
 			</tr>
 			<tr>
 				<td>전화번호</td>
-				<td><select>
+				<td><select name="tel">
+						<option>선택</option>
 						<option>02</option>
 						<option>031</option>
 						<option>051</option>
 						<option>043</option>
 						<option>063</option>
-				</select> - <input type="text" name="tel" size="5"> - <input
-					type="text" name="tel" size="5"></td>
+				</select> - <input type="text" name="tel1" size="5"> - <input type="text" name="tel2" size="5"></td>
 			</tr>
 			<tr>
 				<td>주소</td>
-				<td><input type="text" name="address"></td>
+				<td><input type="text" name="addr1"></td>
 			</tr>
 			<tr>
 				<td>세부주소</td>
-				<td><input type="text" name="address"></td>
+				<td><input type="text" name="addr2"></td>
 			</tr>
 			<tr>
 				<td>email</td>
-				<td><input type="email" name="address"></td>
+				<td><input type="email" name="email"></td>
 			</tr>
 			<tr>
 				<td>좋아하느 가수</td>
-				<td><input type="checkbox" name="sing"> 아이브 <input
-					type="checkbox" name="sing"> 뉴진스 <input type="checkbox"
-					name="sing"> 르세라핌 <input type="checkbox" name="sing">
-					에스파</td>
+				<td>
+				<input type="checkbox" name="sing" > 아이브 
+				<input type="checkbox" name="sing" > 뉴진스 
+				<input type="checkbox" name="sing" > 르세라핌 
+				<input type="checkbox" name="sing" >에스파
+				</td>
 			</tr>
 			<tr>
 				<td>성별</td>
@@ -72,14 +219,14 @@ table {
 			<tr>
 				<td>글쓰기</td>
 				<td>
-				<textarea rows="10" cols="30"></textarea>
+				<textarea rows="10" cols="30" name="read"></textarea>
 				</td>
 			</tr>
 			
-			<tr align="center">
-				<td>
-				<input type="submit" value="전송합시다.">
-				<input type="button" value="초기화">
+			<tr>
+				<td colspan="2" align="center">
+				<input type="submit" value="전송" onclick="return send()">
+				<input type="reset" value="초기화">
 				</td>
 			</tr>
 		</table>

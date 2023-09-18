@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		msg = document.forms[0].code.value;
+		//패턴: 정규표현식
+		//=>/  \d{3}-\d{3} /; => 정수 표현식 정수3자리 - 3자리 넣을수 있음
+		/* regex = /^\d{3}-?\d{3}$/; //우편번호 방식
+		//?: 물음표 앞에 있는게 있어도 되고 없어도 된다 0~1
+		//+ :최소 한개는 있어도 되고 ~ 무한대
+		//*: 안써도 되고 ~ 무한대
+		}  */
+		
+		//^지정된 것을 꼭 지켜라 $지정된것만 와라
+		//[ /.-] 3개중에 하나만 올 수 있다
+		/* regex =/^(\d{4})[ /.-]([01]?\d)[ /.-]([0123]?\d)$/ ; //생년원일 */
+		//regex=/^\d{2,3}[ .-]\d{3,4}[ .-]\d{4}$/;
+		//a-z 범위안에
+		// \. .을 무조건 쓴다
+		regex=/^[a-zA-Z0-9]{4,8}@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+		 if (msg.search(regex) == -1) {
+			alert("잘못된 형식");
+		} else {
+			alert("올바른 형식");
+			}
+		 
+	}
+</script>
+</head>
+<body>
+	<form>
+		<input type="text" name="code"><input type="button"
+			value="클릭" onclick="check()">
+	</form>
+</body>
+</html>

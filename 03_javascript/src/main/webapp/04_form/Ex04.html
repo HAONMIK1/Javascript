@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function focus2() {
+		myform.name.style.backgroundColor = "pink";
+	}
+	function blur2() {
+		
+		myform.name.style.backgroundColor = "orange";
+	}
+	function keydown2() {
+		myform.name.style.backgroundColor = "yellow";
+	}
+</script>
+</head>
+<body>
+	<form name="myform" >
+		<input type="text" name="name" onfocus="focus2()" 
+		onblur="blur2()" onkeydown="keydown2()" onkeyup="this.style.backgroundColor='#FF0000'" >
+	
+	</form>
+
+</body>
+</html>
